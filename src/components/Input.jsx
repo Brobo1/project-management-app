@@ -5,7 +5,7 @@ const Input = forwardRef(
 	
 	let ele;
 	
-	const styles = "block w-full p-2 mb-20 text-gray-900 border border-gray-100 rounded-lg bg-gray-50 text-xs focus:ring-blue-200 focus:border-blue-500 dark:bg-gray-100 dark:border-gray-600 dark:placeholder-gray-300 dark:focus:ring-blue-200 dark:focus:border-blue-500";
+	const styles = "block w-full p-2 mb-20 text-gray-900 border border-stone-100 rounded-lg bg-stone-50 text-xs bg-stone-100 border-stone-600";
 	
 	if (type === "text") {
 	  ele = <input

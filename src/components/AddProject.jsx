@@ -16,7 +16,7 @@ export function AddProject({onSave, projects, onClose, ...props}) {
   
   return (
 	<>
-	  <div className={"flex w-3/4 justify-end gap-4"}>
+	  <div className={"flex justify-end gap-4"}>
 		<Button className={"text-4xl"} onClick={onClose}>Cancel</Button>
 		<Button onClick={handleSave}>Save</Button>
 	  </div>

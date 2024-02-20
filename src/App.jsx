@@ -1,8 +1,8 @@
 import {Sidebar}             from "./components/Sidebar.jsx";
 import {useEffect, useState} from "react";
 import {NoProject}           from "./components/NoProject.jsx";
-import {AddProject}            from "./components/AddProject.jsx";
-import {ProjectDisplaySidebar} from "./components/ProjectDisplaySidebar.jsx";
+import {AddProject}          from "./components/AddProject.jsx";
+import ProjectDisplay        from "./components/ProjectDisplay.jsx";
 
 const PROJECTS = [
   {
@@ -26,9 +26,9 @@ const PROJECTS = [
 ]
 
 function App() {
-  const [projects, setProjects] = useState([]);
-  const [showAddComponent, setShowAddComponent] = useState(false)
-  
+  const [projects, setProjects]                 = useState([]);
+  const [showAddComponent, setShowAddComponent] = useState(false);
+  const [selectProject, setSelectProject]       = useState();
   
   useEffect(() => {
 	const storedProjects = JSON.parse(localStorage.getItem('projects'));
@@ -39,22 +39,23 @@ function App() {
   
   function handleAdd() {
 	setShowAddComponent(() => true);
-	console.log(cond);
   }
   
   function handleClose() {
 	setShowAddComponent(() => false)
   }
   
-  const cond = (showAddComponent && projects.length > 0);
+  function handleProject(project) {
+	setSelectProject(project);
+  }
   
   return (
 	<>
 	  <div
 		className={"flex-row " +
-				   "flex "}
+				   "flex " }
 	  >
-		<Sidebar title={"ayayao"} projects={projects} onClick={handleAdd}/>
+		<Sidebar title={"ayayao"} projects={projects} onClick={handleAdd} onProject={handleProject}/>
 		<div
 		  id={"mainContent"}
 		  className={"text-center " +
@@ -66,10 +67,14 @@ function App() {
 					 "justify-center " +
 					 "items-center "}
 		>
-		  {!cond ?
-		   <NoProject onClick={() => console.log("clicked")}/> :
-		   <AddProject onSave={setProjects} projects={projects} onClose={handleClose}/>
-		  }
+		  {showAddComponent ? (
+			<AddProject onSave={setProjects} projects={projects} onClose={handleClose}/>
+		  ) : selectProject ? (
+			<ProjectDisplay project={selectProject}/>
+		  ) : (
+				<NoProject onClick={() => console.log("clicked")}/>
+			  )}
+		
 		</div>
 	  </div>
 	</>
