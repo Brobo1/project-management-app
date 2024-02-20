@@ -1,4 +1,6 @@
-export function Button({children, ...props}) {
+export function Button({children, styles, ...props}) {
+  
+  
   return (
 	<button {...props}
 			className={

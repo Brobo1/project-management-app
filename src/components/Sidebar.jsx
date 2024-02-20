@@ -1,10 +1,8 @@
-import {Button}         from "./Button.jsx";
-import {ProjectDisplay} from "./ProjectDisplay.jsx";
+import {Button}                from "./Button.jsx";
+import {ProjectDisplaySidebar} from "./ProjectDisplaySidebar.jsx";
 
-export function Sidebar({title, projects}) {
-  function handleClick() {
-	console.log("ayooyo");
-  }
+export function Sidebar({title, projects, onClick}) {
+
   
   return (
 	<aside
@@ -26,13 +24,12 @@ export function Sidebar({title, projects}) {
 	  >
 		Your projects
 	  </p>
-	  <Button onClick={handleClick}>
+	  <Button onClick={onClick}>
 		+ Add Project
 	  </Button>
 	  <ul>
 		{projects.map((value) => (
-		  <ProjectDisplay key={value.title} text={value.title} />
-			
+		  <ProjectDisplaySidebar key={value.id} text={value.title} />
 		))}
 	  </ul>
 	</aside>
