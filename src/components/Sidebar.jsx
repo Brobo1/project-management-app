@@ -8,6 +8,7 @@ export function Sidebar({title, projects, onClick, onProject}) {
 	  className={
 		"bg-stone-950 " +
 		"w-2/6 " +
+		"min-w-fit " +
 		"mt-8 " +
 		"rounded-tr-3xl " +
 		"pt-20 " +

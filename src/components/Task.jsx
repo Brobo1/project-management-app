@@ -21,7 +21,7 @@ export function Task() {
   
   return (
 	<>
-	  <div className={"flex w-full justify-between gap-4 h-20"}>
+	  <div className={"flex flex-row w-full justify-between gap-4 h-auto items-end"}>
 		<Input ref={task} type={"text"} label={"Tasks"}/>
 		<Button onClick={handleTask}> Add Task </Button>
 	  </div>

@@ -1,9 +1,9 @@
 import {Task} from "./Task.jsx";
 
-export default function ProjectDisplay({project}) {
+export default function ProjectDisplay({project, onTaskAdd}) {
   return (
 	<>
-	  <div className={"text-start h-3/4 "}>
+	  <div className={"flex flex-col gap-4 text-start"}>
 	  <h1 className={"text-5xl font-semibold"}>
 		{project.title}
 	  </h1>
@@ -13,7 +13,7 @@ export default function ProjectDisplay({project}) {
 	  <p>
 		{project.desc}
 	  </p>
-	  <Task/>
+	  <Task project={project} onTaskAdd={onTaskAdd}/>
 	  </div>
 	</>
   )

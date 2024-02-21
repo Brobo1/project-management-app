@@ -5,7 +5,7 @@ const Input = forwardRef(
 	
 	let ele;
 	
-	const styles = "block w-full p-2 mb-20 text-gray-900 border border-stone-100 rounded-lg bg-stone-50 text-xs bg-stone-100 border-stone-600";
+	const styles = "block w-full text-xl p-2  text-stone-500 border border-b-2 rounded-t-md rounded-b-sm bg-stone-100  focus:outline-none focus:border-b-stone-400 ";
 	
 	if (type === "text") {
 	  ele = <input
@@ -15,7 +15,7 @@ const Input = forwardRef(
 	} else if (type === "textarea") {
 	  ele = <textarea
 		ref={ref}
-		rows={6}
+		rows={3}
 		className={styles}
 	  />
 	} else if (type === "date") {
@@ -31,7 +31,7 @@ const Input = forwardRef(
 		<div className={"w-3/4 "}>
 		  <label
 			htmlFor="small-input"
-			className="block mb-2 text-lg font-medium text-gray-900 text-start"
+			className="block mb-2 text-2xl font-medium text-gray-900 text-start "
 		  >
 			{label}
 		  </label>

@@ -58,14 +58,14 @@ function App() {
 		<Sidebar title={"ayayao"} projects={projects} onClick={handleAdd} onProject={handleProject}/>
 		<div
 		  id={"mainContent"}
-		  className={"text-center " +
+		  className={
 					 "mx-8 " +
 					 "h-screen " +
-					 "w-full " +
+					 "w-1/2 " +
+					 "min-w-1/2 " +
 					 "flex " +
 					 "flex-col " +
-					 "justify-center " +
-					 "items-center "}
+					 "justify-center " }
 		>
 		  {showAddComponent ? (
 			<AddProject onSave={setProjects} projects={projects} onClose={handleClose}/>
